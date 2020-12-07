@@ -1,0 +1,27 @@
+@import url(./_valid/popup__field_valid.css);
+@import url(./_invalid/popup__field_invalid.css);
+@import url(./_error/popus__field-error.css);
+
+.popup__field {
+    margin-top: 29.74px;
+    height: 26px;
+    font-family: Inter, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.popup__field::placeholder {
+    font-family: Inter, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C4C4C4;
+    vertical-align: top;
+}
+
+.popup__field:focus {
+    outline-width: 0;
+}

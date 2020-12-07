@@ -1,0 +1,21 @@
+@import url(./__list/elements__list.css);
+
+.elements {
+    max-width: 882px;
+    margin: 51px auto 0; 
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+@media screen and (max-width: 1279px) {
+    .elements {
+        max-width: 582px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .elements {
+        margin-top: 36px;
+    }
+}

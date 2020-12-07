@@ -1,0 +1,5 @@
+.element__panel {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 17.24px 26px 21px;
+}
