@@ -1,4 +1,4 @@
-import DeleteButtonIcon from "../images/DeleteButton.svg";
+import deleteButtonIcon from "../images/DeleteButton.svg";
 
 
 function Card({ name, link, likes, onCardClick }) {
@@ -9,7 +9,7 @@ function Card({ name, link, likes, onCardClick }) {
     return (
     <li className="element">
         <img className="element__image" alt={name} src={link} onClick={handleClick}/>
-        <button className="element__delete"><img className="element__delete-image" alt="Удалить" src={DeleteButtonIcon}/></button>
+        <button className="element__delete"><img className="element__delete-image" alt="Удалить" src={deleteButtonIcon}/></button>
         <div className="element__panel">
             <h2 className="element__text">{name}</h2>
             <div className='element__like-container'>

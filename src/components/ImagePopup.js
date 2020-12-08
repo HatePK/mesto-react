@@ -2,7 +2,7 @@ import closeImagePopupIcon from "../images/Close-Icon.svg"
 
 function ImagePopup({card, onClose}) {
     function checkPopup() {
-        if (card !== "") return ("popup_opened")
+        if (card.link !== "") return ("popup_opened")
     }
     return (
         <div className={`popup popup_type_image-big ${checkPopup()}`}>

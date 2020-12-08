@@ -1,8 +1,8 @@
-import EditAvaIcon from "../images/edit-ava-icon.svg";
-import EditProfileIcon from "../images/EditButton.svg";
-import AddCardIcon from "../images/AddButton.svg";
+import editAvaIcon from "../images/edit-ava-icon.svg";
+import editProfileIcon from "../images/EditButton.svg";
+import addCardIcon from "../images/AddButton.svg";
 import { useEffect, useState } from "react";
-import ApiMesto from "../utils/Api";
+import api from "../utils/api";
 import Card from "./Card";
 
 function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
@@ -12,7 +12,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        ApiMesto.userInfo()
+        api.userInfo()
         .then((userData) => {
             setUserName(userData.name)
             setUserDescription(userData.about)
@@ -21,7 +21,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
     }, [])
 
     useEffect(() => {
-        ApiMesto.getCards()
+        api.getCards()
         .then((initialCards) => {
             const cards = initialCards.map((item) => {
                 return {
@@ -41,17 +41,17 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
         <section className="profile">
             <div className="profile__avatar" style={{ backgroundImage: `url(${userAvatar})` }}>
                 <button className="profile__edit-avatar" onClick={onEditAvatar}>
-                    <img className="profile__edit-avatar-icon" src={EditAvaIcon} alt="редактирование аватарки"/>
+                    <img className="profile__edit-avatar-icon" src={editAvaIcon} alt="редактирование аватарки"/>
                 </button>
             </div>
             <div className="profile__info">
                 <div className="profile__line">
                     <h1 className="profile__name">{userName}</h1>
-                    <button className="profile__edit-button" onClick={onEditProfile}><img  className="profile__edit-icon" alt="Редактировать профиль" src={EditProfileIcon}/></button>
+                    <button className="profile__edit-button" onClick={onEditProfile}><img  className="profile__edit-icon" alt="Редактировать профиль" src={editProfileIcon}/></button>
                 </div>
                 <p className="profile__job">{userDescription}</p>
             </div>
-            <button className="profile__add-button" onClick={onAddPlace}><img className="profile__add-button-image" alt="Добавить информацию" src={AddCardIcon}/></button>
+            <button className="profile__add-button" onClick={onAddPlace}><img className="profile__add-button-image" alt="Добавить информацию" src={addCardIcon}/></button>
         </section>
         <section className="elements">
             <ul className="elements__list">

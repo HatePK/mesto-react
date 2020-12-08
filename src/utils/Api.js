@@ -105,10 +105,10 @@ const handleOriginalResponse = (result) => {
         return result.json();
 }
 
-const ApiMesto = new Api({
+const api = new Api({
     url: 'https://mesto.nomoreparties.co/v1/cohort-17',
     headers: {'Content-Type' : 'application/json', 'authorization': 'a985b89f-2e7b-4084-9df7-0663efbc7c3b'},
     function: handleOriginalResponse
 })
 
-export default ApiMesto
+export default api
