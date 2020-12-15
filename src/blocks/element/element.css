@@ -7,6 +7,7 @@
 @import url(./__text/element__text.css);
 @import url(./__delete-image/element__delete-image.css);
 @import url(./__delete/element__delete.css);
+@import url(./__delete/_type/element__delete_type_hidden.css);
 
 .element {
     display: flex;
