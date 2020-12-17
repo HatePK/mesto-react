@@ -37,9 +37,25 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
             onClose={onClose}
             isOpen={isOpen}
             onSubmit={handleSubmit}>
-                <input type="text" name="name-input" onChange={handleNameChange} className="popup__field popup__field_valid popup__field_type_name" placeholder="Имя" required minLength="2" maxLength="40"/>
+                <input type="text" 
+                  name="name-input" 
+                  onChange={handleNameChange} 
+                  value={name} 
+                  className="popup__field popup__field_valid popup__field_type_name" 
+                  placeholder="Имя" 
+                  required minLength="2" 
+                  maxLength="40"
+                />
                 <span className="popup__field-error" id="name-input-error"></span>  
-                <input type="text" name="job-input" onChange={handleDescriptionChange} className="popup__field popup__field_valid popup__field_type_job" placeholder="Деятельность" required minLength="2" maxLength="200"/>
+                <input type="text"
+                  name="job-input"
+                  onChange={handleDescriptionChange}
+                  value={description}
+                  className="popup__field popup__field_valid popup__field_type_job"
+                  placeholder="Деятельность" 
+                  required minLength="2" 
+                  maxLength="200"
+                />
                 <span className="popup__field-error" id="job-input-error"></span>
         </PopupWithForm>
     )

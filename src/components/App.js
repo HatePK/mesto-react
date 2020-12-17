@@ -24,6 +24,9 @@ function App() {
         .then((initialCards) => {
             setCards(initialCards);  
         })
+        .catch((err) => {
+            console.log(err);
+        }); 
     }, [])
 
     function handleCardLike(card) {
@@ -32,12 +35,18 @@ function App() {
             api.addLike(card._id).then((newCard) => {
             const newCards = cards.map((c) => c._id === card._id ? newCard : c);
             setCards(newCards);
-            });
+            })
+            .catch((err) => {
+                console.log(err);
+            }); 
         } else { 
             api.deleteLike(card._id).then((newCard) => {
                 const newCards = cards.map((c) => c._id === card._id ? newCard : c);
                 setCards(newCards);
-            });
+            })
+            .catch((err) => {
+                console.log(err);
+            }); 
         }
     } 
 
@@ -46,7 +55,10 @@ function App() {
         api.deleteCard(card._id, isOwn).then(() => {
             const newCards = cards.filter((c) => c._id !== card._id);
             setCards(newCards);
-        });
+        })
+        .catch((err) => {
+            console.log(err);
+        }); 
     } 
 
     useEffect(() => {
@@ -54,6 +66,9 @@ function App() {
         .then((userData) => {
             setCurrentUser(userData)
         })
+        .catch((err) => {
+            console.log(err);
+        }); 
     }, [])
 
     const handleEditProfileClick = () => {
@@ -78,6 +93,9 @@ function App() {
             setCurrentUser(userData)
             closeAllPopups()
         })
+        .catch((err) => {
+            console.log(err);
+        }); 
     }
 
     const handleAddPlaceSubmit = ({name, link}) => {
@@ -86,6 +104,9 @@ function App() {
             setCards([newCard, ...cards])
             closeAllPopups()
         })
+        .catch((err) => {
+            console.log(err);
+        }); 
     }
 
     const closeAllPopups = () => {
@@ -101,6 +122,9 @@ function App() {
             setCurrentUser(userData)
             closeAllPopups()
         })
+        .catch((err) => {
+            console.log(err);
+        }); 
     }
 
     return (

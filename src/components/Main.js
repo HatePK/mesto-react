@@ -1,9 +1,8 @@
 import editAvaIcon from "../images/edit-ava-icon.svg";
 import editProfileIcon from "../images/EditButton.svg";
 import addCardIcon from "../images/AddButton.svg";
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import Card from "./Card";
-import api from "../utils/api";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick, cards, onCardLike, onCardDelete }) {
